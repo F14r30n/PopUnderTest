@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PopUnder</title>
+</head>
+<body>
+<button onclick="edgePopUnder()">Edge PopUnder</button>
+<button onclick="firefoxPopUnder()">Firefox PopUnder</button>
+<script>
+    if(document.cookie == "popup=1") {
+        document.cookie = "popup=0";
+        window.close();
+    }
+    function edgePopUnder() {
+        var myWindow = window.open("", "", "width=200,height=100");
+        myWindow.blur();
+        window.focus();
+    }
+
+    function firefoxPopUnder() {
+        var myWindow = window.open("https://f14r30n.github.io/PopUnderTest/asd.html", "", "width=200,height=100");
+        document.cookie = "popup=1";
+        location.reload();
+        window.focus();
+        window.close();
+    }
+</script>
+
+</body>
+</html>
